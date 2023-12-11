@@ -4,14 +4,17 @@ import {
   FaEye,
   FaPhoneAlt ,
 } from "react-icons/fa";
+import useModeContext from "../hooks/useModeContext";
 
 const About = () => {
+  const {mode} = useModeContext()
+
   return (
-    <section id="about">
+    <section id="about" className={`text-primary-light ${mode === "light" ? "bg-[#0f5481]" : "#3598dc"}`}>
       {/* about-container */}
-      <div className="px-[1rem] py-[1.5rem] lg:px-[3.5rem] lg:py-[4rem] text-center text-white">
+      <div className="px-[1rem] py-[1.5rem] lg:px-[3.5rem] lg:py-[4rem] text-center">
         {/* about image */}
-        <div>
+        <div className="mt-[1rem] md:mt-0">
           <img
             src={profilePicture}
             alt="A picture of Udhe Austine Ogaga"
@@ -21,13 +24,13 @@ const About = () => {
 
         {/* about text */}
         <div className="max-w-[700px] mx-auto mt-[1.5rem] md:mt-[1.2rem]">
-          <h1 className="text-[1.5rem] md:text-[2rem]  leading-normal">
+          <h1 className="text-[1.4rem] md:text-[2rem]  leading-normal">
             <span>Hi, I&apos;m</span> <span className="font-semibold">Udhe Austine Ogaga</span>
           </h1>
           <h2 className="text-[1.3rem] md:text-[1.5rem] font-medium leading-normal md:mb-[1.5rem] mb-[1.2rem]">
             Frontend Web Developer
           </h2>
-          <p className="text-base md:text-[1.25rem] leading-normal">
+          <p className="text-[0.95rem] md:text-[1.25rem] leading-normal">
             I design and develop aesthetically pleasing, accessible,
             interactive, search engine optimized and responsive webpages,
             creating seamless web experiences for users and connecting
@@ -37,13 +40,13 @@ const About = () => {
           <div className="flex justify-center gap-[1.5rem] lg:gap-[2rem] mt-[2rem]">
             <Link
               to={""}
-              className="flex items-center gap-[0.5rem] justify-center w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] bg-secondary font-semibold md:text-[1.25rem] text-[1.1rem] text-primary-dark rounded-lg hover:bg-primary-dark hover:text-secondary hover:border-2 hover:border-secondary transition-all duration-300 ease-in-out"
+              className="flex items-center gap-[0.5rem] justify-center w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] bg-secondary-dark font-semibold md:text-[1.25rem] text-[1.1rem] text-primary-dark rounded-lg hover:bg-primary-dark hover:text-secondary hover:border-2 hover:border-secondary transition-all duration-300 ease-in-out"
             >
               <FaEye /> <span>View CV</span>
             </Link>
             <a
               href="#contact"
-              className="flex items-center gap-[0.5rem] justify-center w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] border-2 border-secondary font-semibold md:text-[1.25rem] text-[1.1rem] leading-normal text-secondary rounded-lg hover:bg-secondary hover:text-primary-dark transition-all duration-300 ease-in-out"
+              className="flex items-center gap-[0.5rem] justify-center w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] border-2 border-secondary font-semibold md:text-[1.25rem] text-[1.1rem] leading-normal bg-primary-dark text-secondary rounded-lg hover:bg-secondary-dark hover:text-primary-dark transition-all duration-300 ease-in-out"
             >
               <FaPhoneAlt /> <span>Contact me</span>
             </a>

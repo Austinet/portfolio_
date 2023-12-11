@@ -1,5 +1,6 @@
 import { FaLaptopCode, FaChalkboardTeacher } from "react-icons/fa";
 import { FaPenToSquare } from "react-icons/fa6";
+import useModeContext from "../hooks/useModeContext";
 
 const servicesList = [
   {
@@ -22,9 +23,11 @@ const servicesList = [
   },
 ];
 const Services = () => {
+  const {mode} = useModeContext()
+
   return (
-    <section id="services" className=" bg-very-dark">
-      <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[5rem] text-center text-white">
+    <section id="services" className={`${mode === "dark" ? "bg-very-dark" : ""}`}>
+      <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[5rem] text-center">
         <h2 className="text-[1.5rem] lg:text-[2rem] font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]">
           SERVICES
         </h2>
@@ -35,7 +38,7 @@ const Services = () => {
           {servicesList.map((service) => (
             <div
               key={service.title}
-              className="w-[340px] h-[320px] px-[1rem] py-[1.5rem] border border-secondary rounded-lg"
+              className="w-[340px] h-[320px] px-[1rem] py-[1.5rem] shadow-lg border border-secondary rounded-lg"
             >
               {service.icon}
               <h4 className="text-[1.25rem] font-semibold leading-normal my-[1rem]">

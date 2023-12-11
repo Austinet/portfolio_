@@ -1,3 +1,4 @@
+import { useState } from "react"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
@@ -6,12 +7,15 @@ import Projects from "../components/Projects"
 import Services from "../components/Services"
 import SkillSet from "../components/SkillSet"
 import Testimonials from "../components/Testimonials"
+import useModeContext from "../hooks/useModeContext"
 
 const Home = () => {
+  const {mode} = useModeContext()
+
   return (
-    <>
+    <div className={`${mode === "light" ? "text-very-dark bg-primary-light" : "text-primary-light bg-primary-dark"}`}>
     <Header />
-    <main className="bg-primary-dark">
+    <main className="">
         <About />
         <SkillSet />
         <Services />
@@ -20,7 +24,7 @@ const Home = () => {
         <Contact />
     </main>
     <Footer />
-    </>
+    </div>
   )
 }
 

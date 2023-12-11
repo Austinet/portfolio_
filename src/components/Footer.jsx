@@ -1,9 +1,12 @@
 import { FaFacebookF, FaGithub, FaLinkedin, FaTwitter, FaCaretSquareUp } from 'react-icons/fa'
+import useModeContext from '../hooks/useModeContext'
 
 const Footer = () => {
+  const {mode} = useModeContext()
+
     return(
         <footer>
-         <div className="text-white text-center relative bg-very-dark pt-[8rem] pb-[2rem] px-[1rem]">
+         <div className={`text-center relative pt-[8rem] pb-[2rem] px-[1rem] ${mode === "dark" ? "bg-very-dark" : "bg-[#0f5481]"}`}>
           {/* Socials */}
           <div>
             <ul className='flex justify-center items-center gap-[1.2rem]'>
@@ -21,7 +24,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <p className="my-[1.2rem]"> Copyright &copy; 2023 All rights reserved, Udhe Austine Ogaga</p>
+          <p className="my-[1.2rem] text-white"> Copyright &copy; 2023 All rights reserved, Udhe Austine Ogaga</p>
           <div className='fixed z-20 right-[2rem] bottom-[1.5rem] bg-[#000000d0] rounded-full'>
           <a href="#header"> <FaCaretSquareUp className={`${iconStyle}`}/></a>
 

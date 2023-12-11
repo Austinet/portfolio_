@@ -9,6 +9,7 @@ import {
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
 import { BsBootstrapFill } from "react-icons/bs";
 import { GiPencilBrush } from "react-icons/gi";
+import useModeContext from "../hooks/useModeContext";
 
 const skillsList = [
   {
@@ -64,25 +65,28 @@ const skillsList = [
 ];
 
 const SkillSet = () => {
+  const {mode} = useModeContext()
+  
   return (
-    <section id="skillset">
-      <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[4rem] text-center mt-[3rem]">
-        <div className="text-white">
-          <h2 className="text-[1.5rem] lg:text-[2rem] font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]">
+    <section id="skillset" className={`${mode === "dark" ? "" : "bg-[#EAF6F6] "}`}>
+      <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[4rem] text-center pt-[3rem]">
+        <div>
+          <h2 className="text-[1.5rem] lg:text-[2rem] font-semibold leading-normal md:mb-[3.5rem] mb-[2rem]">
             TECHNICAL SKILL SET
           </h2>
           <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
             I am skilled in:
           </h3>
+         
         </div>
 
         <div>
           <ul className="grid md:grid-cols-5 grid-cols-2 gap-[1.5rem] lg:gap-[2.5rem] justify-between">
             {skillsList.map((skill) => (
               <li key={skill.id} className="">
-                <div className="bg-light-dark p-[1rem] rounded-lg shadow-card flex flex-col gap-2 items-center justify-center">
+                <div className={`${mode === "dark" ? "bg-light-dark" : "bg-[#0f5481]"}  p-[1rem] rounded-lg shadow-card flex flex-col gap-2 items-center justify-center`}>
                   {skill.icon}
-                  <h3 className="sm:text-[1.1rem] text-secondary font-semibold leading-normal">
+                  <h3 className={`text-secondary sm:text-[1.1rem]  font-semibold leading-normal`}>
                     {skill.name}
                   </h3>
                 </div>

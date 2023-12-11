@@ -10,6 +10,7 @@ import project8 from "../assets/images/task.png";
 import project9 from "../assets/images/easybank.png";
 import project10 from "../assets/images/credit-card.png";
 import { FaGithub, FaGlobe } from "react-icons/fa";
+import useModeContext from "../hooks/useModeContext";
 const projectList = [
   {
     id: 1,
@@ -110,8 +111,10 @@ const projectList = [
 ];
 
 const Projects = () => {
+  const {mode} = useModeContext()
+
   return (
-    <section id="portfolio" className=" bg-very-dark">
+    <section id="portfolio"  className={`${mode === "dark" ? "bg-very-dark" : "bg-[#006ca5]"}`}>
       <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[4rem] text-center text-white">
         <h2 className="text-[1.5rem] lg:text-[2rem] font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]">
           PROJECTS
@@ -133,7 +136,7 @@ const Projects = () => {
             return (
               <div
                 key={id}
-                className=" bg-light-dark shadow-card  border-secondary rounded-lg"
+                className={`${mode === "dark" ? "bg-light-dark" : "bg-white backdrop-blur-md text-very-dark"} shadow-card  border-secondary rounded-lg`}
               >
                 <div className="h-[250px] rounded-md relative">
                   <img
@@ -141,23 +144,23 @@ const Projects = () => {
                     alt="Project screenshot"
                     className="h-full w-full rounded-md"
                   />
-                  <div className="absolute bg-[#000000a1] left-0 bottom-0 w-full rounded-b-md">
+                  <div className="absolute bg-[#0000005d] backdrop-blur-sm left-0 bottom-0 w-full rounded-b-md">
                     <ul className="flex gap-[1.3rem] justify-center items-center py-[1.2rem] rounded-b-md">
                       <li>
                         <Link
-                          className="flex items-center gap-[0.5rem] justify-center w-[8rem] h-[2.8rem] bg-secondary font-medium text-[1.1rem] text-primary-dark rounded-md hover:bg-primary-dark hover:text-secondary hover:border-2 hover:border-secondary transition-all duration-300 ease-in-out"
+                          className="flex items-center gap-[0.5rem] justify-center w-[8rem] h-[2.8rem] bg-secondary-dark font-medium text-[1.1rem] text-primary-dark rounded-md hover:bg-primary-dark hover:text-secondary hover:border-2 hover:border-secondary transition-all duration-300 ease-in-out"
                           to={live}
                         >
-                          <FaGlobe className="text-secondary]" />
+                          <FaGlobe />
                           <span>View Site</span>
                         </Link>
                       </li>
                       <li>
                         <Link
-                          className="flex items-center gap-[0.5rem] justify-center w-[8rem] h-[2.8rem] border-2 border-secondary font-medium text-[1.1rem] leading-normal text-secondary bg-primary-dark rounded-md hover:bg-secondary hover:text-primary-dark transition-all duration-300 ease-in-out"
+                          className="flex items-center gap-[0.5rem] justify-center w-[8rem] h-[2.8rem] border-2 border-secondary font-medium text-[1.1rem] leading-normal text-secondary bg-primary-dark rounded-md hover:bg-secondary-dark hover:text-primary-dark transition-all duration-300 ease-in-out"
                           to={repository}
                         >
-                          <FaGithub className="text-secondary]" />
+                          <FaGithub />
                           <span>Github</span>
                         </Link>
                       </li>
@@ -165,7 +168,7 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="h-[120px] px-[1rem] py-[1rem]">
-                  <h3 className="text-[1.15rem] md:text-[1.3rem] text-[#62E0D9] font-semibold mb-[0.3rem]">
+                  <h3 className={`${mode === "dark" ? "text-secondary" : "text-very-dark"} text-[1.15rem] md:text-[1.3rem] font-semibold mb-[0.3rem]`}>
                     {name}
                   </h3>
                   <p className="text-base md:text-md font-medium">
