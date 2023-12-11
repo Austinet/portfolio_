@@ -50,7 +50,7 @@ const Header = () => {
       <nav className={`${mode === "dark" ? "shadow-blue bg-transparent backdrop-blur-md" : "bg-[#EAF6F6] shadow-xl"} fixed z-20 md:static w-full top-0 left-0`}>
         <div className="px-[1rem] py-[1.5rem] lg:px-[3.5rem] flex justify-between items-center">
           <div>
-            <h2 className={`${mode === "dark" ? "text-[#62E0D9]  hover:text-white" : ""} font-semibold lg:text-[2rem] text-[1.5rem]`}>
+            <h2 className={`${mode === "dark" ? "text-[#62E0D9] hover:text-white" : ""} font-semibold lg:text-[2rem] text-[1.5rem]`}>
               <Link to="/">{`<Austinet />`}</Link>
             </h2>
           </div>
@@ -83,16 +83,14 @@ const Header = () => {
               }
             </button>
            </div>
-           <div className="md:hidden text-white cursor-pointer">
+           <div  onClick={() => setToggleNav(!toggleNav)} className={`md:hidden ${mode === "dark" ? " text-white" : "text-very-dark"}`}>
             {toggleNav ? (
               <AiOutlineClose
-                className="text-xl"
-                onClick={() => setToggleNav(!toggleNav)}
+                className="text-[1.3rem]"
               />
             ) : (
               <FaBars
-                className="text-xl"
-                onClick={() => setToggleNav(!toggleNav)}
+                className="text-[1.3rem]"
               />
             )}
           </div>
