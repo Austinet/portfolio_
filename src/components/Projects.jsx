@@ -148,7 +148,7 @@ const Projects = () => {
                     <ul className="flex gap-[1.3rem] justify-center items-center py-[1.2rem] rounded-b-md">
                       <li>
                         <Link
-                          className="flex items-center gap-[0.5rem] justify-center w-[8rem] h-[2.8rem] bg-secondary-dark font-medium text-[1.1rem] text-primary-dark rounded-md hover:bg-primary-dark hover:text-secondary hover:border-2 hover:border-secondary transition-all duration-300 ease-in-out"
+                          className={`buttons ${mode === "dark" ? "dark-bg-buttons" : "light-bg-buttons"} w-[8rem] h-[2.8rem] font-medium text-[1.1rem] rounded-md`}
                           to={live}
                         >
                           <FaGlobe />
@@ -157,7 +157,7 @@ const Projects = () => {
                       </li>
                       <li>
                         <Link
-                          className="flex items-center gap-[0.5rem] justify-center w-[8rem] h-[2.8rem] border-2 border-secondary font-medium text-[1.1rem] leading-normal text-secondary bg-primary-dark rounded-md hover:bg-secondary-dark hover:text-primary-dark transition-all duration-300 ease-in-out"
+                          className={`buttons  ${mode === "dark" ? "dark-outline-buttons" : "light-outline-buttons"} w-[8rem] h-[2.8rem] font-medium text-[1.1rem] leading-normal rounded-md`}
                           to={repository}
                         >
                           <FaGithub />

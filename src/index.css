@@ -9,3 +9,26 @@
 * {
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
+ 
+.buttons {
+  @apply flex items-center gap-[0.5rem] justify-center border-2 transition-all duration-300 ease-in-out;
+}
+
+.dark-bg-buttons {
+  @apply bg-secondary-dark text-primary-dark hover:bg-primary-dark hover:text-secondary border-secondary;
+}
+
+.dark-outline-buttons {
+  @apply bg-primary-dark text-secondary border-secondary hover:bg-secondary-dark hover:text-primary-dark;
+}
+
+.light-bg-buttons {
+  @apply bg-[#006ca5] text-[#EAF6F6] border-[#006ca5] hover:bg-[#EAF6F6] hover:text-[#006ca5];
+}
+
+.light-outline-buttons {
+  @apply border-[#006ca5] text-[#006ca5] hover:bg-[#006ca5] hover:text-[#EAF6F6];
+}
+/* .button-outline {
+  @apply
+} */

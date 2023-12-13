@@ -10,7 +10,7 @@ const About = () => {
   const {mode} = useModeContext()
 
   return (
-    <section id="about" className={`text-primary-light ${mode === "light" ? "bg-[#0f5481]" : "#3598dc"}`}>
+    <section id="about" className={` ${mode === "light" ? "bg-[#EAF6F6]" : ""}`}>
       {/* about-container */}
       <div className="px-[1rem] py-[1.5rem] lg:px-[3.5rem] lg:py-[4rem] text-center">
         {/* about image */}
@@ -40,13 +40,13 @@ const About = () => {
           <div className="flex justify-center gap-[1.5rem] lg:gap-[2rem] mt-[2rem]">
             <Link
               to={""}
-              className="flex items-center gap-[0.5rem] justify-center w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] bg-secondary-dark font-semibold md:text-[1.25rem] text-[1.1rem] text-primary-dark rounded-lg hover:bg-primary-dark hover:text-secondary hover:border-2 hover:border-secondary transition-all duration-300 ease-in-out"
+              className={`buttons w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] font-semibold md:text-[1.25rem] text-[1.1rem] ${mode === "dark" ? "dark-bg-buttons" : "light-bg-buttons"} rounded-lg`}
             >
               <FaEye /> <span>View CV</span>
             </Link>
             <a
               href="#contact"
-              className="flex items-center gap-[0.5rem] justify-center w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] border-2 border-secondary font-semibold md:text-[1.25rem] text-[1.1rem] leading-normal bg-primary-dark text-secondary rounded-lg hover:bg-secondary-dark hover:text-primary-dark transition-all duration-300 ease-in-out"
+              className={`buttons w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] font-semibold md:text-[1.25rem] text-[1.1rem] ${mode === "dark" ? "dark-outline-buttons" : "light-outline-buttons"} rounded-lg`}
             >
               <FaPhoneAlt /> <span>Contact me</span>
             </a>

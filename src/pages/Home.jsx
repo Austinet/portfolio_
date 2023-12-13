@@ -13,7 +13,7 @@ const Home = () => {
   const {mode} = useModeContext()
 
   return (
-    <div className={`${mode === "light" ? "text-very-dark bg-primary-light" : "text-primary-light bg-primary-dark"}`}>
+    <div className={`${mode === "light" ? "text-primary-dark bg-primary-light" : "text-primary-light bg-primary-dark"}`}>
     <Header />
     <main className="">
         <About />

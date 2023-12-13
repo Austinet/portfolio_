@@ -56,7 +56,7 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-[1rem]">
              <div
-            className={`absolute left-0 z-30 w-screen md:w-fit md:static transition-all duration-300 ease-in-out bg-[#374b68] md:bg-transparent ${
+            className={`absolute left-0 z-30 w-screen md:w-fit md:static transition-all duration-300 ease-in-out  ${mode === "dark" ? "bg-[#374b68]" : "bg-[#EAF6F6]"} md:bg-transparent ${
               toggleNav ? "top-[5rem]" : "top-[-50rem]"
             }`}
           >

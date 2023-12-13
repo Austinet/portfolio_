@@ -35,7 +35,7 @@ export default {
         "very-light": "hsl(216,53%,9%)",
       },
       boxShadow: {
-          "card": "0 0 5px hsl(218,28%,13%)",
+          "card": "0 0 3px hsl(218,28%,13%)",
           'blue': '0 0px 5px #62E0D9'
       },
     },
