@@ -15,52 +15,52 @@ const skillsList = [
   {
     id: 1,
     name: "HTML",
-    icon: <FaHtml5 className="text-secondary text-[4rem]" />,
+    icon: <FaHtml5 className="text-[4rem]" />,
   },
   {
     id: 2,
     name: "CSS",
-    icon: <FaCss3Alt className="text-secondary text-[4rem]" />,
+    icon: <FaCss3Alt className="text-[4rem]" />,
   },
   {
     id: 3,
     name: "JavaScript",
-    icon: <SiJavascript className="text-secondary text-[4rem]" />,
+    icon: <SiJavascript className="text-[4rem]" />,
   },
   {
     id: 4,
     name: "Sass",
-    icon: <FaSass className="text-secondary text-[4rem]" />,
+    icon: <FaSass className="text-[4rem]" />,
   },
   {
     id: 5,
     name: "Tailwind CSS",
-    icon: <SiTailwindcss className="text-secondary text-[4rem]" />,
+    icon: <SiTailwindcss className="text-[4rem]" />,
   },
   {
     id: 6,
     name: "Bootstrap",
-    icon: <BsBootstrapFill className="text-secondary text-[4rem]" />,
+    icon: <BsBootstrapFill className="text-[4rem]" />,
   },
   {
     id: 7,
     name: "ReactJs",
-    icon: <FaReact className="text-secondary text-[4rem]" />,
+    icon: <FaReact className="text-[4rem]" />,
   },
   {
     id: 8,
     name: "Git",
-    icon: <FaGitAlt className="text-secondary text-[4rem]" />,
+    icon: <FaGitAlt className="text-[4rem]" />,
   },
   {
     id: 9,
     name: "Github",
-    icon: <FaGithub className="text-secondary text-[4rem]" />,
+    icon: <FaGithub className="text-[4rem]" />,
   },
   {
     id: 10,
     name: "Graphic Design",
-    icon: <GiPencilBrush className="text-secondary text-[4rem]" />,
+    icon: <GiPencilBrush className="text-[4rem]" />,
   },
 ];
 
@@ -77,16 +77,15 @@ const SkillSet = () => {
           <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
             I am skilled in:
           </h3>
-         
         </div>
 
         <div>
           <ul className="grid md:grid-cols-5 grid-cols-2 gap-[1.5rem] lg:gap-[2.5rem] justify-between">
             {skillsList.map((skill) => (
               <li key={skill.id} className="">
-                <div className={`${mode === "dark" ? "bg-light-dark" : "bg-[#0f5481]"}  p-[1rem] rounded-lg shadow-card flex flex-col gap-2 items-center justify-center`}>
-                  {skill.icon}
-                  <h3 className={`text-secondary sm:text-[1.1rem]  font-semibold leading-normal`}>
+                <div className={`${mode === "dark" ? "bg-light-dark shadow-card" : "bg-[#0f5481] shadow-md"}  p-[1rem] rounded-lg flex flex-col gap-2 items-center justify-center`}>
+                  <p className={`${mode === "dark" ? "text-secondary" : "text-[#EAF6F6]"}`}>{skill.icon}</p>
+                  <h3 className={` sm:text-[1.1rem] font-semibold leading-normal ${mode === "dark" ? "text-secondary" : "text-[#EAF6F6]"}`}>
                     {skill.name}
                   </h3>
                 </div>

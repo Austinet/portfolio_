@@ -65,7 +65,7 @@ const Header = () => {
                 <li key={link.id}>
                   <a
                     href={link.href}
-                    className=" hover:text-secondary cursor-pointer font-medium text-[1.1rem] md:text-[1.2rem]"
+                    className={`cursor-pointer font-medium text-[1.1rem] md:text-[1.2rem] ${mode === "dark" ? "hover:text-secondary " : "hover:text-[#006ca5]"}`}
                   >
                     {link.title}
                   </a>

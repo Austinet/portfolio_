@@ -11,7 +11,7 @@
 }
  
 .buttons {
-  @apply flex items-center gap-[0.5rem] justify-center border-2 transition-all duration-300 ease-in-out;
+  @apply flex items-center gap-[0.5rem] justify-center border-2 shadow-lg transition-all duration-300 ease-in-out;
 }
 
 .dark-bg-buttons {
@@ -23,11 +23,11 @@
 }
 
 .light-bg-buttons {
-  @apply bg-[#006ca5] text-[#EAF6F6] border-[#006ca5] hover:bg-[#EAF6F6] hover:text-[#006ca5];
+  @apply bg-[#006ca5] text-[#EAF6F6] border-[#006ca5] hover:bg-[#EAF6F6] hover:text-[#006ca5] ;
 }
 
 .light-outline-buttons {
-  @apply border-[#006ca5] text-[#006ca5] hover:bg-[#006ca5] hover:text-[#EAF6F6];
+  @apply border-[#006ca5] bg-[#EAF6F6] text-[#006ca5] hover:bg-[#006ca5] hover:text-[#EAF6F6];
 }
 /* .button-outline {
   @apply

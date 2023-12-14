@@ -18,7 +18,7 @@ const About = () => {
           <img
             src={profilePicture}
             alt="A picture of Udhe Austine Ogaga"
-            className="md:w-[300px] md:h-[300px] w-[200px] h-[200px] mx-auto rounded-full border-[5px] border-secondary hover:border-white"
+            className={`md:w-[300px] md:h-[300px] w-[200px] h-[200px] mx-auto rounded-full border-[5px]  ${mode === "light" ? " border-[#006ca5]" : "hover:border-white border-secondary"}`}
           />
         </div>
 
@@ -39,7 +39,7 @@ const About = () => {
           </p>
           <div className="flex justify-center gap-[1.5rem] lg:gap-[2rem] mt-[2rem]">
             <Link
-              to={""}
+              to={"https://drive.google.com/file/d/1f9JIddKX73VU2jrifkfIoy8WyQESHjEE/view?usp=drivesdk"}
               className={`buttons w-[10rem] md:w-[11.5rem] h-[3.5rem] lg:h-[4rem] font-semibold md:text-[1.25rem] text-[1.1rem] ${mode === "dark" ? "dark-bg-buttons" : "light-bg-buttons"} rounded-lg`}
             >
               <FaEye /> <span>View CV</span>

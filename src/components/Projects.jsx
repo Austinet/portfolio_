@@ -9,7 +9,8 @@ import project7 from "../assets/images/gym.jpg";
 import project8 from "../assets/images/task.png";
 import project9 from "../assets/images/easybank.png";
 import project10 from "../assets/images/credit-card.png";
-import { FaGithub, FaGlobe } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import useModeContext from "../hooks/useModeContext";
 const projectList = [
   {
@@ -136,7 +137,7 @@ const Projects = () => {
             return (
               <div
                 key={id}
-                className={`${mode === "dark" ? "bg-light-dark" : "bg-white backdrop-blur-md text-very-dark"} shadow-card  border-secondary rounded-lg`}
+                className={`${mode === "dark" ? "bg-light-dark" : "bg-[#EAF6F6] backdrop-blur-md text-very-dark"} shadow-card  border-secondary rounded-lg`}
               >
                 <div className="h-[250px] rounded-md relative">
                   <img
@@ -151,7 +152,7 @@ const Projects = () => {
                           className={`buttons ${mode === "dark" ? "dark-bg-buttons" : "light-bg-buttons"} w-[8rem] h-[2.8rem] font-medium text-[1.1rem] rounded-md`}
                           to={live}
                         >
-                          <FaGlobe />
+                          <HiOutlineExternalLink />
                           <span>View Site</span>
                         </Link>
                       </li>

@@ -7,19 +7,19 @@ const servicesList = [
     title: "Frontend Web Development",
     description: `I create visually appealing user interfaces with plain HTML, CSS, and JavaScript, as well as using
     libraries and frameworks such as ReactJs and Tailwind CSS.`,
-    icon: <FaLaptopCode className="text-[4rem] inline-block text-secondary" />,
+    icon: <FaLaptopCode className="text-[4rem] inline-block" />,
   },
   {
     title: "Tutoring and Mentoring",
     description: `I tutor and mentor newbies in Tech, with classes and mentorship based on Web Development in particular,
     and Computer Science in general.`,
-    icon: <FaChalkboardTeacher className="text-[4rem] inline-block text-secondary" />,
+    icon: <FaChalkboardTeacher className="text-[4rem] inline-block" />,
   },
   {
     title: "Technical Writing",
     description: `I write articles based on Web Development in particular,
     and Computer Science in general.`,
-    icon: <FaPenToSquare className="text-[4rem] inline-block text-secondary" />,
+    icon: <FaPenToSquare className="text-[4rem] inline-block" />,
   },
 ];
 const Services = () => {
@@ -38,9 +38,10 @@ const Services = () => {
           {servicesList.map((service) => (
             <div
               key={service.title}
-              className="w-[340px] h-[320px] px-[1rem] py-[1.5rem] shadow-lg border border-secondary rounded-lg"
+              className={`w-[340px] h-[320px] px-[1rem] py-[1.5rem] shadow-lg border  rounded-lg ${mode === "dark" ? "border-secondary" : "border-[#006ca5]"}`}
             >
-              {service.icon}
+              <p className={`${mode === "dark" ? "text-secondary" : "text-[#006ca5]"}`}>{service.icon}</p>
+              
               <h4 className="text-[1.25rem] font-semibold leading-normal my-[1rem]">
                 {service.title}
               </h4>
