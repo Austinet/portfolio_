@@ -7,12 +7,15 @@ const Contact = () => {
   return (
     <section id="contact" className={`${mode === "dark" ? "" : "bg-[#EAF6F6]"}`}>
       <div className="relative max-w-[700px] mx-auto px-[1rem] py-[1.5rem] lg:pt-[4rem] pb-[9rem]">
-          <h2 className="text-[1.5rem] lg:text-[2rem] text-center font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]">CONTACT</h2>
+        <div>
+               <h2 className="text-[1.5rem] lg:text-[2rem] text-center font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]" data-aos="fade-up" data-aos-duration="2000">CONTACT</h2>
           {/* <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
            You&apos;ll get a response within 12 hours.
         </h3> */}
+        </div>
+     
         <div>
-          <div className="form">
+          <div className="form" data-aos="fade-up" data-aos-duration="2000">
            <form action="mailto:austinetsplendour@gmail.com" method="POST" encType="text/plain">
               <div className="sub-form">
                  <div>
@@ -29,7 +32,7 @@ const Contact = () => {
                <button type="submit" className={`${mode === "dark" ? "dark-bg-buttons" : "light-bg-buttons"} gap-[0.8rem] buttons w-[10rem] h-[3.5rem] font-semibold md:text-[1.25rem] text-[1.1rem]  rounded-lg`}><FaEnvelope /> <span>SEND</span></button>
             </form> 
           </div>
-          <div className="absolute -bottom-[5rem] left-0 z-20 w-full flex justify-center items-center">
+          <div className="absolute -bottom-[5rem] left-0 z-20 w-full flex justify-center items-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
             <ul  className={`${mode === "dark" ? "bg-light-dark" : "bg-[#2b74a5]"} rounded-[0.5rem] shadow-card max-w-[420px] md:p-[2rem] p-[1.5rem] text-white`}>
                 <li className='flex items-center gap-[1.5rem] mb-[1rem] font-medium md:text-[1.2rem]'><FaPhoneAlt /> <span>08142211941</span></li>
                 <li className='flex items-center gap-[1.5rem] mb-[1rem] font-medium md:text-[1.2rem]'><FaEnvelope /> <span>austinetsplendour@gmail.com</span></li>

@@ -46,7 +46,7 @@ const Header = () => {
   };
 
   return (
-    <header id="header" className="min-h-[5rem] md:min-h-fit">
+    <header id="header" className="min-h-[5rem] md:min-h-fit" data-aos="fade-down" data-aos-delay="200">
       <nav className={`${mode === "dark" ? "shadow-blue bg-transparent backdrop-blur-md" : "bg-[#EAF6F6] shadow-xl"} fixed z-20 md:static w-full top-0 left-0`}>
         <div className="px-[1rem] py-[1.5rem] lg:px-[3.5rem] flex justify-between items-center">
           <div>
