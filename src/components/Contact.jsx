@@ -1,5 +1,6 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import useModeContext from '../hooks/useModeContext'
+import Heading from './Heading'
 
 const Contact = () => {
   const {mode} = useModeContext()
@@ -8,7 +9,7 @@ const Contact = () => {
     <section id="contact" className={`${mode === "dark" ? "" : "bg-[#EAF6F6]"}`}>
       <div className="relative max-w-[700px] mx-auto px-[1rem] py-[1.5rem] lg:pt-[4rem] pb-[9rem]">
         <div>
-               <h2 className="text-[1.5rem] lg:text-[2rem] text-center font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]" data-aos="fade-up" data-aos-duration="2000">CONTACT</h2>
+        <Heading title={"CONTACT"} />
           {/* <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
            You&apos;ll get a response within 12 hours.
         </h3> */}

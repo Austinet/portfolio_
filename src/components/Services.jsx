@@ -1,6 +1,7 @@
 import { FaLaptopCode, FaChalkboardTeacher } from "react-icons/fa";
 import { FaPenToSquare } from "react-icons/fa6";
 import useModeContext from "../hooks/useModeContext";
+import Heading from "./Heading";
 
 const servicesList = [
   {
@@ -31,9 +32,7 @@ const Services = () => {
   return (
     <section id="services" className={`${mode === "dark" ? "bg-very-dark" : ""}`}>
       <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[5rem] text-center">
-        <h2 className="text-[1.5rem] lg:text-[2rem] font-semibold leading-normal mb-[2rem] md:mb-[3.5rem]" data-aos="fade-up" data-aos-delay="100">
-          SERVICES
-        </h2>
+        <Heading title={"SERVICES"} />
         <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
           I offer services such as:
         </h3>

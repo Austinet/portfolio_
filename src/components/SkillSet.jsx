@@ -10,6 +10,7 @@ import { SiJavascript, SiTailwindcss } from "react-icons/si";
 import { BsBootstrapFill } from "react-icons/bs";
 import { GiPencilBrush } from "react-icons/gi";
 import useModeContext from "../hooks/useModeContext";
+import Heading from "./Heading";
 
 const skillsList = [
   {
@@ -75,27 +76,46 @@ const skillsList = [
 ];
 
 const SkillSet = () => {
-  const {mode} = useModeContext()
-  
+  const { mode } = useModeContext();
+
   return (
-    <section id="skillset" className={`${mode === "dark" ? "" : "bg-[#EAF6F6] "}`}>
+    <section
+      id="skillset"
+      className={`${mode === "dark" ? "" : "bg-[#EAF6F6] "}`}
+    >
       <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[4rem] text-center pt-[3rem]">
-        <div>
-          <h2 className="text-[1.5rem] lg:text-[2rem] font-semibold leading-normal md:mb-[3.5rem] mb-[2rem]" data-aos="fade-up" data-aos-delay="100">
-            TECHNICAL SKILL SET
-          </h2>
-          <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
-            I am skilled in:
-          </h3>
-        </div>
+        <Heading title={"SKILL SET"} />
+        <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
+          I am skilled in:
+        </h3>
 
         <div>
           <ul className="grid md:grid-cols-5 grid-cols-2 gap-[1.5rem] lg:gap-[2.5rem] justify-between">
             {skillsList.map((skill) => (
-              <li key={skill.id} data-aos="fade-left" data-aos-delay={skill.delay}>
-                <div className={`${mode === "dark" ? "bg-light-dark shadow-card" : "bg-[#0f5481] shadow-md"}  p-[1rem] rounded-lg flex flex-col gap-2 items-center justify-center`}>
-                  <p className={`${mode === "dark" ? "text-secondary" : "text-[#EAF6F6]"}`}>{skill.icon}</p>
-                  <h3 className={` sm:text-[1.1rem] font-semibold leading-normal ${mode === "dark" ? "text-secondary" : "text-[#EAF6F6]"}`}>
+              <li
+                key={skill.id}
+                data-aos="fade-left"
+                data-aos-delay={skill.delay}
+              >
+                <div
+                  className={`${
+                    mode === "dark"
+                      ? "bg-light-dark shadow-card"
+                      : "bg-[#0f5481] shadow-md"
+                  }  p-[1rem] rounded-lg flex flex-col gap-2 items-center justify-center`}
+                >
+                  <p
+                    className={`${
+                      mode === "dark" ? "text-secondary" : "text-[#EAF6F6]"
+                    }`}
+                  >
+                    {skill.icon}
+                  </p>
+                  <h3
+                    className={` sm:text-[1.1rem] font-semibold leading-normal ${
+                      mode === "dark" ? "text-secondary" : "text-[#EAF6F6]"
+                    }`}
+                  >
                     {skill.name}
                   </h3>
                 </div>
