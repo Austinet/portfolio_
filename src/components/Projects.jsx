@@ -9,17 +9,19 @@ import project7 from "../assets/images/gym.jpg";
 import project8 from "../assets/images/task.png";
 import project9 from "../assets/images/easybank.png";
 import project10 from "../assets/images/credit-card.png";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaSearch } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import useModeContext from "../hooks/useModeContext";
 import Heading from "./Heading";
+import { useEffect, useState } from "react";
+
 const projectList = [
   {
     id: 1,
     name: "Countries API",
     description: ``,
     screenshot: project1,
-    tools: ["HTML", "CSS", "JavScript", "REST API", "Web Storage"],
+    tools: ["HTML", "CSS", "JavaScript", "REST API", "Web Storage"],
     live: "https://austinet.github.io/countriesAPI/",
     repository: "https://github.com/Austinet/countriesAPI.git",
   },
@@ -114,6 +116,25 @@ const projectList = [
 
 const Projects = () => {
   const { mode } = useModeContext();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTools, setSelectedTools] = useState("all");
+  const [filteredProjects, setFilteredProjects] = useState([]);
+
+  useEffect(() => {
+    const query = searchQuery.trim().toLowerCase();
+    const tools = selectedTools;
+
+    const updateFilteredProjects = projectList.filter((project) => {
+      const matchQuery =
+        project.name.toLowerCase().includes(query) ||
+        project.description.toLowerCase().includes(query);
+
+      const matchTools = tools === "all" ? true : project.tools.includes(tools);
+
+      return matchQuery && matchTools;
+    });
+    setFilteredProjects(updateFilteredProjects);
+  }, [searchQuery, selectedTools]);
 
   return (
     <section
@@ -125,82 +146,115 @@ const Projects = () => {
         <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
           Projects I&apos;ve worked on, excluding confidential projects:
         </h3>
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 items-center justify-between gap-[1.5rem] gap-y-[2rem] xl:gap-[2.5rem] md:gap-y-[3.5rem]">
-          {projectList.map((project) => {
-            const {
-              id,
-              name,
-              screenshot,
-              tools,
-              description,
-              repository,
-              live,
-            } = project;
-            return (
-              <div
-                key={id}
-                className={`${
-                  mode === "dark"
-                    ? "bg-light-dark"
-                    : "bg-[#EAF6F6] backdrop-blur-md text-very-dark"
-                } shadow-card  border-secondary rounded-lg`}
-                data-aos="fade-left"
-                data-aos-delay={id * 100 + 100}
-              >
-                <div className="h-[250px] rounded-md relative">
-                  <img
-                    src={screenshot}
-                    alt="Project screenshot"
-                    className="h-full w-full rounded-md"
-                  />
-                  <div className="absolute bg-[#0000005d] backdrop-blur-sm left-0 bottom-0 w-full rounded-b-md">
-                    <ul className="flex gap-[1.3rem] justify-center items-center py-[1.2rem] rounded-b-md">
-                      <li>
-                        <Link
-                          className={`buttons ${
-                            mode === "dark"
-                              ? "dark-bg-buttons"
-                              : "light-bg-buttons"
-                          } w-[8rem] h-[2.8rem] font-medium text-[1.1rem] rounded-md`}
-                          to={live}
-                        >
-                          <HiOutlineExternalLink />
-                          <span>View Site</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          className={`buttons  ${
-                            mode === "dark"
-                              ? "dark-outline-buttons"
-                              : "light-outline-buttons"
-                          } w-[8rem] h-[2.8rem] font-medium text-[1.1rem] leading-normal rounded-md`}
-                          to={repository}
-                        >
-                          <FaGithub />
-                          <span>Github</span>
-                        </Link>
-                      </li>
-                    </ul>
+
+        {/* Search and filter features  */}
+        <div className="mb-10 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6">
+          <div className="w-full max-w-[400px] relative">
+            <input
+              type="text"
+              className="bg-white w-full p-[0.9rem] pr-[3.3rem] border rounded text-black text-[1.1rem] outline-blue-400 "
+              placeholder="Search using project name or decription"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <FaSearch className="text-[1.8rem] absolute top-[0.9rem] right-[0.9rem] text-gray-500" />
+          </div>
+          <div className="w-[150px]">
+            <select
+              value={selectedTools}
+              onChange={(e) => setSelectedTools(e.target.value)}
+              className="bg-white border p-[0.9rem] rounded w-full focus:outline focus:outline-blue-400 text-black text-[1.1rem]"
+            >
+              <option value="all">All</option>
+              <option value="ReactJs">ReactJs</option>
+              <option value="VueJs">VueJs</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="HTMLA">HTML</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Projects */}
+        {!filteredProjects.length ? (
+          <p>No Project match</p>
+        ) : (
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 items-center justify-between gap-[1.5rem] gap-y-[2rem] xl:gap-[2.5rem] md:gap-y-[3.5rem]">
+            {filteredProjects.map((project) => {
+              const {
+                id,
+                name,
+                screenshot,
+                tools,
+                description,
+                repository,
+                live,
+              } = project;
+              return (
+                <div
+                  key={id}
+                  className={`${
+                    mode === "dark"
+                      ? "bg-light-dark"
+                      : "bg-[#EAF6F6] backdrop-blur-md text-very-dark"
+                  } shadow-card  border-secondary rounded-lg`}
+                  data-aos="fade-left"
+                  data-aos-delay={id * 100 + 100}
+                >
+                  <div className="h-[250px] rounded-md relative">
+                    <img
+                      src={screenshot}
+                      alt="Project screenshot"
+                      className="h-full w-full rounded-md"
+                    />
+                    <div className="absolute bg-[#0000005d] backdrop-blur-sm left-0 bottom-0 w-full rounded-b-md">
+                      <ul className="flex gap-[1.3rem] justify-center items-center py-[1.2rem] rounded-b-md">
+                        <li>
+                          <Link
+                            className={`buttons ${
+                              mode === "dark"
+                                ? "dark-bg-buttons"
+                                : "light-bg-buttons"
+                            } w-[8rem] h-[2.8rem] font-medium text-[1.1rem] rounded-md`}
+                            to={live}
+                          >
+                            <HiOutlineExternalLink />
+                            <span>View Site</span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className={`buttons  ${
+                              mode === "dark"
+                                ? "dark-outline-buttons"
+                                : "light-outline-buttons"
+                            } w-[8rem] h-[2.8rem] font-medium text-[1.1rem] leading-normal rounded-md`}
+                            to={repository}
+                          >
+                            <FaGithub />
+                            <span>Github</span>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="h-[120px] px-[1rem] py-[1rem]">
+                    <h3
+                      className={`${
+                        mode === "dark" ? "text-secondary" : "text-very-dark"
+                      } text-[1.15rem] md:text-[1.3rem] font-semibold mb-[0.3rem]`}
+                    >
+                      {name}
+                    </h3>
+                    <p className="text-base md:text-md font-medium">
+                      {tools.join(", ")}
+                    </p>
+                    <p>{description}</p>
                   </div>
                 </div>
-                <div className="h-[120px] px-[1rem] py-[1rem]">
-                  <h3
-                    className={`${
-                      mode === "dark" ? "text-secondary" : "text-very-dark"
-                    } text-[1.15rem] md:text-[1.3rem] font-semibold mb-[0.3rem]`}
-                  >
-                    {name}
-                  </h3>
-                  <p className="text-base md:text-md font-medium">
-                    {tools.join(", ")}
-                  </p>
-                  <p>{description}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );
