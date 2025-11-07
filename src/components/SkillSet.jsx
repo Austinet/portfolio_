@@ -5,10 +5,15 @@ import {
   FaReact,
   FaGitAlt,
   FaGithub,
+  FaVuejs,
 } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss } from "react-icons/si";
+import {
+  SiJavascript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import { BsBootstrapFill } from "react-icons/bs";
-import { GiPencilBrush } from "react-icons/gi";
 import useModeContext from "../hooks/useModeContext";
 import Heading from "./Heading";
 
@@ -57,21 +62,33 @@ const skillsList = [
   },
   {
     id: 8,
-    name: "Git",
-    icon: <FaGitAlt className="text-[4rem]" />,
+    name: "TypeScript",
+    icon: <SiTypescript className="text-[4rem]" />,
     delay: 300,
   },
   {
     id: 9,
-    name: "Github",
-    icon: <FaGithub className="text-[4rem]" />,
+    name: "Vue",
+    icon: <FaVuejs className="text-[4rem]" />,
     delay: 400,
   },
   {
     id: 10,
-    name: "Graphic Design",
-    icon: <GiPencilBrush className="text-[4rem]" />,
+    name: "NextJs",
+    icon: <SiNextdotjs className="text-[4rem]" />,
     delay: 500,
+  },
+  {
+    id: 11,
+    name: "Git",
+    icon: <FaGitAlt className="text-[4rem]" />,
+    delay: 100,
+  },
+  {
+    id: 12,
+    name: "Github",
+    icon: <FaGithub className="text-[4rem]" />,
+    delay: 200,
   },
 ];
 

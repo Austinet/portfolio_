@@ -4,7 +4,7 @@ import project2 from "../assets/images/ecommerce.png";
 import project3 from "../assets/images/bookmark.png";
 import project4 from "../assets/images/weather.png";
 import project5 from "../assets/images/product.png";
-import project6 from "../assets/images/linktree.png";
+import project6 from "../assets/images/tickets.png";
 import project7 from "../assets/images/gym.jpg";
 import project8 from "../assets/images/task.png";
 import project9 from "../assets/images/easybank.png";
@@ -67,12 +67,12 @@ const projectList = [
   },
   {
     id: 6,
-    name: "KodeCamp Link Tree",
+    name: "Ticket Management Web App",
     description: ``,
     screenshot: project6,
-    tools: ["ReactJs", "CSS"],
-    live: "https://austinet.github.io/linktree/",
-    repository: "https://github.com/Austinet/linktree.git",
+    tools: ["VueJs", "Tailwind CSS", "Web Storage"],
+    live: "https://tickhub-vue.netlify.app",
+    repository: "https://github.com/Austinet/tickhub-vue.git",
   },
   {
     id: 7,
@@ -113,10 +113,13 @@ const projectList = [
 ];
 
 const Projects = () => {
-  const {mode} = useModeContext()
+  const { mode } = useModeContext();
 
   return (
-    <section id="portfolio"  className={`${mode === "dark" ? "bg-very-dark" : "bg-[#006ca5]"}`}>
+    <section
+      id="portfolio"
+      className={`${mode === "dark" ? "bg-very-dark" : "bg-[#006ca5]"}`}
+    >
       <div className="max-w-[1250px] mx-auto px-[1rem] py-[1.5rem] lg:py-[4rem] text-center text-white">
         <Heading title={"PROJECTS"} />
         <h3 className="text-left text-[1.1rem] lg:text-[1.5rem] font-medium leading-normal my-[2rem]">
@@ -136,8 +139,14 @@ const Projects = () => {
             return (
               <div
                 key={id}
-                className={`${mode === "dark" ? "bg-light-dark" : "bg-[#EAF6F6] backdrop-blur-md text-very-dark"} shadow-card  border-secondary rounded-lg`}
-                data-aos="fade-left" data-aos-delay={id * 100 + 100} >
+                className={`${
+                  mode === "dark"
+                    ? "bg-light-dark"
+                    : "bg-[#EAF6F6] backdrop-blur-md text-very-dark"
+                } shadow-card  border-secondary rounded-lg`}
+                data-aos="fade-left"
+                data-aos-delay={id * 100 + 100}
+              >
                 <div className="h-[250px] rounded-md relative">
                   <img
                     src={screenshot}
@@ -148,7 +157,11 @@ const Projects = () => {
                     <ul className="flex gap-[1.3rem] justify-center items-center py-[1.2rem] rounded-b-md">
                       <li>
                         <Link
-                          className={`buttons ${mode === "dark" ? "dark-bg-buttons" : "light-bg-buttons"} w-[8rem] h-[2.8rem] font-medium text-[1.1rem] rounded-md`}
+                          className={`buttons ${
+                            mode === "dark"
+                              ? "dark-bg-buttons"
+                              : "light-bg-buttons"
+                          } w-[8rem] h-[2.8rem] font-medium text-[1.1rem] rounded-md`}
                           to={live}
                         >
                           <HiOutlineExternalLink />
@@ -157,7 +170,11 @@ const Projects = () => {
                       </li>
                       <li>
                         <Link
-                          className={`buttons  ${mode === "dark" ? "dark-outline-buttons" : "light-outline-buttons"} w-[8rem] h-[2.8rem] font-medium text-[1.1rem] leading-normal rounded-md`}
+                          className={`buttons  ${
+                            mode === "dark"
+                              ? "dark-outline-buttons"
+                              : "light-outline-buttons"
+                          } w-[8rem] h-[2.8rem] font-medium text-[1.1rem] leading-normal rounded-md`}
                           to={repository}
                         >
                           <FaGithub />
@@ -168,7 +185,11 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="h-[120px] px-[1rem] py-[1rem]">
-                  <h3 className={`${mode === "dark" ? "text-secondary" : "text-very-dark"} text-[1.15rem] md:text-[1.3rem] font-semibold mb-[0.3rem]`}>
+                  <h3
+                    className={`${
+                      mode === "dark" ? "text-secondary" : "text-very-dark"
+                    } text-[1.15rem] md:text-[1.3rem] font-semibold mb-[0.3rem]`}
+                  >
                     {name}
                   </h3>
                   <p className="text-base md:text-md font-medium">
