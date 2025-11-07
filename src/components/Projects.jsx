@@ -169,7 +169,7 @@ const Projects = () => {
               <option value="ReactJs">ReactJs</option>
               <option value="VueJs">VueJs</option>
               <option value="JavaScript">JavaScript</option>
-              <option value="HTMLA">HTML</option>
+              <option value="HTML">HTML</option>
             </select>
           </div>
         </div>
