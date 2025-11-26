@@ -49,7 +49,7 @@ const Footer = () => {
 
           <p className="my-[1.2rem] text-white">
           {" "}
-          Copyright &copy; 2023 All rights reserved, Udhe Austine Ogaga
+          Copyright &copy; {new Date().getFullYear()} All rights reserved, Udhe Austine Ogaga
         </p>
         </div>
        
