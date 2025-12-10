@@ -17,7 +17,6 @@ const Footer = () => {
           mode === "dark" ? "bg-very-dark" : "bg-[#0f5481]"
         }`}
       >
-        
         <div data-aos="fade-up" data-aos-delay="100">
           {/* Socials */}
           <ul className="flex justify-center items-center gap-[1.2rem]">
@@ -42,17 +41,17 @@ const Footer = () => {
             <li>
               <a href="https://twitter.com/austineudhe">
                 {" "}
-                <FaTwitter className={`${iconStyle}`} />{" "}
+                <FaTwitter className={`${iconStyle}`} />
               </a>
             </li>
           </ul>
 
           <p className="my-[1.2rem] text-white">
-          {" "}
-          Copyright &copy; {new Date().getFullYear()} All rights reserved, Udhe Austine Ogaga
-        </p>
+            Copyright &copy; {new Date().getFullYear()} All rights reserved,
+            Udhe Austine Ogaga.
+          </p>
         </div>
-       
+
         <div className="fixed z-20 right-[2rem] bottom-[1.5rem] bg-[#000000d0] rounded-full">
           <a href="#header">
             {" "}

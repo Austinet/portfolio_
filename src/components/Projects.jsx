@@ -8,7 +8,7 @@ import project6 from "../assets/images/tickets.png";
 import project7 from "../assets/images/gym.jpg";
 import project8 from "../assets/images/task.png";
 import project9 from "../assets/images/easybank.png";
-import project10 from "../assets/images/credit-card.png";
+import diaCuraMed from "../assets/images/dia-cura-med.png";
 import { FaGithub, FaSearch } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import useModeContext from "../hooks/useModeContext";
@@ -18,12 +18,12 @@ import { useEffect, useState } from "react";
 const projectList = [
   {
     id: 1,
-    name: "Countries API",
+    name: "DiaCura Med",
     description: ``,
-    screenshot: project1,
-    tools: ["HTML", "CSS", "JavaScript", "REST API", "Web Storage"],
-    live: "https://austinet.github.io/countriesAPI/",
-    repository: "https://github.com/Austinet/countriesAPI.git",
+    screenshot: diaCuraMed,
+    tools: ["NextJs", "TypeScript", "Tailwind CSS", "REST API", "MongoDB"],
+    live: "https://dia-cura-med.netlify.app",
+    repository: "https://github.com/Austinet/dia-cura-med.git",
   },
   {
     id: 2,
@@ -36,6 +36,33 @@ const projectList = [
   },
   {
     id: 3,
+    name: "Ticket Management Web App",
+    description: ``,
+    screenshot: project6,
+    tools: ["VueJs", "Tailwind CSS", "Web Storage"],
+    live: "https://tickhub-vue.netlify.app",
+    repository: "https://github.com/Austinet/tickhub-vue.git",
+  },
+  {
+    id: 4,
+    name: "Snickers product page",
+    description: ``,
+    screenshot: project5,
+    tools: ["ReactJs", "Tailwind CSS"],
+    live: "https://ecommerce-product-page-austinet.netlify.app",
+    repository: "https://github.com/Austinet/ecommerce-product-page",
+  },
+  {
+    id: 5,
+    name: "Countries API",
+    description: ``,
+    screenshot: project1,
+    tools: ["HTML", "CSS", "JavaScript", "REST API", "Web Storage"],
+    live: "https://austinet.github.io/countriesAPI/",
+    repository: "https://github.com/Austinet/countriesAPI.git",
+  },
+  {
+    id: 6,
     name: "Bookmark Landing page",
     description: ``,
     screenshot: project3,
@@ -44,7 +71,7 @@ const projectList = [
     repository: "https://github.com/Austinet/bookmark.git",
   },
   {
-    id: 4,
+    id: 7,
     name: "Weather App",
     description: ``,
     screenshot: project4,
@@ -59,25 +86,7 @@ const projectList = [
     repository: "https://github.com/Austinet/weather-app.git",
   },
   {
-    id: 5,
-    name: "Snickers product page",
-    description: ``,
-    screenshot: project5,
-    tools: ["ReactJs", "Tailwind CSS"],
-    live: "https://ecommerce-product-page-austinet.netlify.app",
-    repository: "https://github.com/Austinet/ecommerce-product-page",
-  },
-  {
-    id: 6,
-    name: "Ticket Management Web App",
-    description: ``,
-    screenshot: project6,
-    tools: ["VueJs", "Tailwind CSS", "Web Storage"],
-    live: "https://tickhub-vue.netlify.app",
-    repository: "https://github.com/Austinet/tickhub-vue.git",
-  },
-  {
-    id: 7,
+    id: 8,
     name: "Gym2Fit",
     description: ``,
     screenshot: project7,
@@ -86,7 +95,7 @@ const projectList = [
     repository: "https://github.com/Austinet/gym2fit.git",
   },
   {
-    id: 8,
+    id: 9,
     name: "Task Management App",
     description: ``,
     screenshot: project8,
@@ -95,22 +104,13 @@ const projectList = [
     repository: "https://github.com/Austinet/task-manager-app.git",
   },
   {
-    id: 9,
+    id: 10,
     name: "EasyBank Landing page",
     description: ``,
     screenshot: project9,
     tools: ["ReactJs", "Tailwind CSS"],
     live: "https://austinet.github.io/easybank-landing-page",
     repository: "https://github.com/Austinet/easybank-landing-page.git",
-  },
-  {
-    id: 10,
-    name: "Credit Card Creator",
-    description: ``,
-    screenshot: project10,
-    tools: ["HTML", "CSS", "JavaScript"],
-    live: "https://austinet.github.io/interactiveCard/",
-    repository: "https://github.com/Austinet/interactiveCard.git",
   },
 ];
 
@@ -167,8 +167,9 @@ const Projects = () => {
             >
               <option value="all">All</option>
               <option value="ReactJs">ReactJs</option>
+              <option value="NextJs">NextJs</option>
               <option value="VueJs">VueJs</option>
-              <option value="JavaScript">JavaScript</option>
+              <option value="TypeScript">TypeScript</option>
               <option value="HTML">HTML</option>
             </select>
           </div>
